@@ -21,16 +21,14 @@ return_value = st.sidebar.selectbox(
 @st.cache(allow_output_mutation=True)
 def load_data():
 
-    # Load financial dataset
+    # Load dataset
     df = pd.read_csv('/Users/rraman7/python_local/streamlit_dr_app/data.csv', sep=',') #SET PATH HERE
 
     # Clean NaN values
     df = ta.utils.dropna(df)
 
-    # Apply feature engineering (technical analysis)
-    # df = ta.add_all_ta_features(df, "Open", "High", "Low", "Close", "Volume_BTC", fillna=True)
-    #df = ta.add_volatility_ta(df, "High", "Low", "Close", fillna=False, colprefix=ta_col_prefix)
-    #df = ta.add_momentum_ta(df, "High", "Low", "Close", "Volume_Currency", fillna=False, colprefix=ta_col_prefix)
+    # Apply feature engineering
+    # 
 
     return df
 
